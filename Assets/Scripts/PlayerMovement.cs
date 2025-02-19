@@ -8,7 +8,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField]
     float jumpForce;
     Rigidbody rb;
-    Animator anim;
+    public Animator anim;
     AudioSource audioSource;
     Vector3 movement;//voy a guardarme la dirección de movimiento
     Vector3 movementRelative;
@@ -31,6 +31,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField]
     bool RelativeMovement;
     bool secondJump;
+    public bool canMove;
 
 
     void Start()
@@ -133,5 +134,10 @@ public class PlayerMovement : MonoBehaviour
             isGrounded = false;
         
         }
+    }
+
+    public void Turn(Vector3 point) {
+        transform.LookAt(new Vector3(point.x, transform.position.y, point.z));
+    
     }
 }
