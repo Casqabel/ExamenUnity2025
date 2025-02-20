@@ -14,7 +14,8 @@ public class CameraFollow : MonoBehaviour
     float distance;//distancia inicial que hay entre la cámara y el player
     void Start()
     {
-        distance = Vector3.Distance(transform.position, player.position); ;
+        distance = Vector3.Distance(transform.position, player.position);
+        Cursor.lockState = CursorLockMode.Locked;
     }
 
     //Aquí se suele calcular la posición de la cámara
@@ -36,8 +37,8 @@ public class CameraFollow : MonoBehaviour
     }
 
     void Controlled() {
-        h = Input.GetAxis("Mouse X");
-        v = Input.GetAxis("Mouse Y"); ;
+        h = -Input.GetAxis("Mouse X");
+        v = -Input.GetAxis("Mouse Y"); ;
         SimpleMove();
         transform.Translate(new Vector3(h*cameraSpeed*Time.deltaTime,v*cameraSpeed* Time.deltaTime, 0));
         transform.LookAt(player);
