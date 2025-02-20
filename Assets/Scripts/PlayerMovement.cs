@@ -32,6 +32,7 @@ public class PlayerMovement : MonoBehaviour
     bool RelativeMovement;
     bool secondJump;
     public bool canMove;
+    AudioSource audio;
 
 
     void Start()
@@ -39,6 +40,7 @@ public class PlayerMovement : MonoBehaviour
         camera = Camera.main.transform;
         rb = GetComponent<Rigidbody>();
         anim = GetComponent<Animator>();
+        audio = GetComponent<AudioSource>();
        
     }
 
@@ -145,5 +147,9 @@ public class PlayerMovement : MonoBehaviour
 
     public void CanMove() {
         canMove = true;
+    }
+
+    public void Step() {
+        audio.Play();
     }
 }
