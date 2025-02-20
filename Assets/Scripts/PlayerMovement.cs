@@ -51,17 +51,18 @@ public class PlayerMovement : MonoBehaviour
     private void FixedUpdate()
     {
         Ray();
-       
+        if (canMove) { 
             Move();
       
        
-        Rotation();
-        if (jump) 
-        {
-            Jump();
-            if (secondJump) anim.SetTrigger("secondJump");
-            jump = false;
+            Rotation();
+            if (jump) 
+            {
+                Jump();
+              
+                jump = false;
         
+            }
         }
     }
     void Jump() {
@@ -93,7 +94,7 @@ public class PlayerMovement : MonoBehaviour
         //es decir, es un vector UNITARIO, que solo me da dirección
         if (Input.GetKeyDown(KeyCode.Space) && (isGrounded || !secondJump)) 
         {
-            if (!secondJump)  secondJump = true; 
+           
             jump = true;
         }
 
@@ -128,7 +129,7 @@ public class PlayerMovement : MonoBehaviour
         if (Physics.Raycast(rayPos.transform.position, Vector3.down, rayLen, rayMask))
         {
             isGrounded = true;
-            secondJump = false;
+           
         }
         else {
             isGrounded = false;
@@ -139,5 +140,10 @@ public class PlayerMovement : MonoBehaviour
     public void Turn(Vector3 point) {
         transform.LookAt(new Vector3(point.x, transform.position.y, point.z));
     
+    }
+
+
+    public void CanMove() {
+        canMove = true;
     }
 }
