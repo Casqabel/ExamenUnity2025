@@ -94,7 +94,7 @@ public class PlayerMovement : MonoBehaviour
         movement.Normalize();//Normalizar un vector significa que hacemos que su módulo valga 1 (m)
         
         //es decir, es un vector UNITARIO, que solo me da dirección
-        if (Input.GetKeyDown(KeyCode.Space) && (isGrounded || !secondJump)) 
+        if (Input.GetKeyDown(KeyCode.Space) && isGrounded) 
         {
            
             jump = true;
