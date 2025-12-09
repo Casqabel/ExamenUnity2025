@@ -31,6 +31,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField]
     bool RelativeMovement;
     bool secondJump;
+    bool running;
     public bool canMove;
     AudioSource audio;
 
@@ -71,13 +72,20 @@ public class PlayerMovement : MonoBehaviour
         rb.AddForce(Vector3.up* jumpForce);
     }
     private void Move()
-    { if (RelativeMovement) 
+    {
+        float walkSpeedE = walkSpeed;
+        if (running) {
+            walkSpeedE *= 1.5f;
+        }
+        if (RelativeMovement)
+           
+    
         {
-            rb.velocity = new Vector3(movementRelative.x * walkSpeed, rb.velocity.y, movementRelative.z * walkSpeed);
+            rb.velocity = new Vector3(movementRelative.x * walkSpeedE, rb.velocity.y, movementRelative.z * walkSpeedE);
         }
         else 
         {
-            rb.velocity = new Vector3(movement.x * walkSpeed, rb.velocity.y, movement.z * walkSpeed); 
+            rb.velocity = new Vector3(movement.x * walkSpeedE, rb.velocity.y, movement.z * walkSpeedE); 
         }
        // rb.MovePosition(transform.position + (movement * walkSpeed));
         
@@ -99,6 +107,13 @@ public class PlayerMovement : MonoBehaviour
            
             jump = true;
         }
+        if (Input.GetKeyDown(KeyCode.LeftShift))
+        {
+            running = true;
+
+
+        }
+        else { running = false; }
 
     }
     void Animating()
@@ -109,6 +124,7 @@ public class PlayerMovement : MonoBehaviour
             anim.SetBool("walking", false);
 
         anim.SetBool("isGrounded", isGrounded);
+        anim.SetBool("running", running);
     }
     void Rotation()
     {
