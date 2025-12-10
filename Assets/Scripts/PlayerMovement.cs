@@ -31,7 +31,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField]
     bool RelativeMovement;
     bool secondJump;
-    bool running;
+    [SerializeField] bool running;
     public bool canMove;
     AudioSource audio;
 
@@ -107,7 +107,7 @@ public class PlayerMovement : MonoBehaviour
            
             jump = true;
         }
-        if (Input.GetKeyDown(KeyCode.LeftShift))
+        if (Input.GetKey(KeyCode.LeftShift))
         {
             running = true;
 
