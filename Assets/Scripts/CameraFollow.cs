@@ -26,7 +26,7 @@ public class CameraFollow : MonoBehaviour
         //Muevo la cámara
         
         //SimpleMove();
-        Controlled();
+        //Controlled();
     }
 
 
