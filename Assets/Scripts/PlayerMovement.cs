@@ -35,6 +35,8 @@ public class PlayerMovement : MonoBehaviour
     public bool canMove;
     AudioSource audio;
 
+    Vector3 respawn;
+
 
     void Start()
     {
@@ -42,6 +44,7 @@ public class PlayerMovement : MonoBehaviour
         rb = GetComponent<Rigidbody>();
         anim = GetComponent<Animator>();
         audio = GetComponent<AudioSource>();
+        respawn=transform.position;
        
     }
 
@@ -167,5 +170,26 @@ public class PlayerMovement : MonoBehaviour
 
     public void Step() {
         audio.Play();
+    }
+
+    public void Respawn() {
+        transform.position = respawn;
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Finish")) {
+            Respawn();
+        }
+        if (other.CompareTag("Respawn")) { 
+            respawn=other.transform.position;
+        }
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.collider.CompareTag("Finish")) {
+            Respawn();
+        }
     }
 }
