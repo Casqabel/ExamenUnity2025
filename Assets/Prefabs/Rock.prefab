@@ -189,6 +189,8 @@ MonoBehaviour:
   - Si llegas tarde no puedes entrar al examen
   - No juegues en clase
   - Hay que entregarlo al final de la clase
+  - No se puede cambiar la fecha del examen
+  - Los fallos del test restan
 --- !u!1 &7134076642938576241
 GameObject:
   m_ObjectHideFlags: 0
