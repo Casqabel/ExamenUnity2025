@@ -34,7 +34,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] bool running;
     public bool canMove;
     AudioSource audio;
-
+  
     Vector3 respawn;
 
 
@@ -169,6 +169,7 @@ public class PlayerMovement : MonoBehaviour
     }
 
     public void Step() {
+        
         audio.Play();
     }
 
@@ -184,6 +185,7 @@ public class PlayerMovement : MonoBehaviour
         if (other.CompareTag("Respawn")) { 
             respawn=other.transform.position;
         }
+       
     }
 
     private void OnCollisionEnter(Collision collision)

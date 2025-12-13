@@ -4,11 +4,16 @@ using UnityEngine;
 
 public class collect : MonoBehaviour
 {
+    [SerializeField] AudioSource source;
+    public bool open;
+
+
     public int coins;
     // Start is called before the first frame update
     void Start()
     {
         coins = 0;
+        open = false;
         
     }
 
@@ -23,6 +28,7 @@ public class collect : MonoBehaviour
         if (other.CompareTag("coin")) {
             coins++;
             Destroy(other.gameObject);
+            source.Play();
         }
     }
 }
