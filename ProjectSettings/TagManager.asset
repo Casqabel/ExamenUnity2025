@@ -5,6 +5,8 @@ TagManager:
   serializedVersion: 2
   tags:
   - target
+  - bullet
+  - coin
   layers:
   - Default
   - TransparentFX
@@ -14,8 +16,8 @@ TagManager:
   - UI
   - Ground
   - Targets
-  - 
-  - 
+  - Door
+  - Player
   - 
   - 
   - 

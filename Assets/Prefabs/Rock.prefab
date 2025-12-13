@@ -186,8 +186,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mensajes:
   - "Ma\xF1ana es la entrega"
-  - No llegues tarde
-  - Otra cosa
+  - Si llegas tarde no puedes entrar al examen
+  - No juegues en clase
+  - Hay que entregarlo al final de la clase
 --- !u!1 &7134076642938576241
 GameObject:
   m_ObjectHideFlags: 0
