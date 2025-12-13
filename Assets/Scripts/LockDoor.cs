@@ -12,6 +12,7 @@ public class LockDoor : MonoBehaviour
     {
         text = GetComponent<TextMeshPro>();
         text.enabled = false;
+        
     }
 
     // Update is called once per frame
@@ -30,6 +31,7 @@ public class LockDoor : MonoBehaviour
             }
             else {
                 text.enabled = true;
+                text.text = "Te faltan " + (coins - player.coins) + "monedas para abrir la puerta";
                 StartCoroutine("disenableText");
 
             }
