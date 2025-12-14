@@ -100,7 +100,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Ejemplo de mensaje
+  m_text: "Si recog\xE9is antes nos quedaremos 10 minutos m\xE1s"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -185,12 +185,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mensajes:
-  - "Ma\xF1ana es la entrega"
+  - No se va a retrasar la fecha de entrega
   - Si llegas tarde no puedes entrar al examen
   - No juegues en clase
   - Hay que entregarlo al final de la clase
   - No se puede cambiar la fecha del examen
   - Los fallos del test restan
+  - Hasta en punto no se va nadie
+  - "Si recog\xE9is antes nos quedaremos 10 minutos m\xE1s"
 --- !u!1 &7134076642938576241
 GameObject:
   m_ObjectHideFlags: 0
