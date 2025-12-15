@@ -5,10 +5,11 @@ using UnityEngine.SceneManagement;
 
 public class End : MonoBehaviour
 {
+    bool end;
     // Start is called before the first frame update
     void Start()
     {
-        
+        end = false;
     }
 
     // Update is called once per frame
@@ -18,9 +19,15 @@ public class End : MonoBehaviour
     }
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Player")) {
-            SceneManager.LoadScene("End");
+        if (other.CompareTag("Player") && !end) {
+            end = true;
+            Invoke("End", 3f);
                 }
         
+    }
+
+    void Fin() {
+        SceneManager.LoadScene("End");
+
     }
 }
