@@ -14,6 +14,7 @@ public class collect : MonoBehaviour
     void Start()
     {
         coins = 0;
+        Stats.coins = 0;
         open = false;
         
     }
@@ -28,7 +29,8 @@ public class collect : MonoBehaviour
     {
         if (other.CompareTag("coin")) {
             coins++;
-            text.text = "Coins: " + coins;
+            Stats.coins++;
+            text.text = "Coins: " + Stats.coins;
             Destroy(other.gameObject);
             source.Play();
         }
