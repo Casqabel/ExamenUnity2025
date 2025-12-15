@@ -4,7 +4,7 @@ using UnityEngine;
 
 public static class Stats
 {
-    public static int coins;
-    public static int deaths;
+    public static int coins=0;
+    public static int deaths=0;
     
 }
