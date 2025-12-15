@@ -21,7 +21,7 @@ public class End : MonoBehaviour
     {
         if (other.CompareTag("Player") && !end) {
             end = true;
-            Invoke("End", 3f);
+            Invoke("Fin", 3f);
                 }
         
     }
