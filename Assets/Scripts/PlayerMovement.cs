@@ -46,6 +46,7 @@ public class PlayerMovement : MonoBehaviour
         audio = GetComponent<AudioSource>();
         respawn=transform.position;
        
+       
     }
 
     void Update()
@@ -185,6 +186,8 @@ public class PlayerMovement : MonoBehaviour
         if (other.CompareTag("Respawn")) { 
             respawn=other.transform.position;
         }
+      
+
        
     }
 
