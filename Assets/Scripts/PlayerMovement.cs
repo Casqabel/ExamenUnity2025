@@ -176,6 +176,7 @@ public class PlayerMovement : MonoBehaviour
 
     public void Respawn() {
         transform.position = respawn;
+        Stats.deaths++;
     }
 
     private void OnTriggerEnter(Collider other)
